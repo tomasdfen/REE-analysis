@@ -1,7 +1,7 @@
-import requests
-import json
-import sys
 import os
+import sys
+import json
+import requests
 from datetime import datetime
 
 FMT = '%Y-%m-%dT%H:%M'
@@ -33,9 +33,9 @@ for year in (2017, 2018, 2019):
     for month in range(1,13):
         start_date = datetime(year,month,1)
         if month == 2:
-            end_date = datetime(year, month,28,23)
+            end_date = datetime(year, month,28,23,50)
         elif month in (1,3,5,7,8,10,12):
-            end_date = datetime(year, month,31,23)
+            end_date = datetime(year, month,31,23,50)
         else:
-            end_date = datetime(year, month,30,23)
+            end_date = datetime(year, month,30,23,50)
         get_month_data(start_date, end_date, year, month)
